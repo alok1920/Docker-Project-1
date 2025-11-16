@@ -110,7 +110,7 @@ ingress {
 resource "aws_instance" "demo_server" {
   ami                    = "ami-0e35ddab05955cf57"
   instance_type          = "t2.medium"
-  key_name               = "kubernetes"
+  key_name               = "project"
   subnet_id              = aws_subnet.project_public_subnet_01.id
   for_each               = toset(["Ansible", "Jenkins", "Docker"])
   vpc_security_group_ids = [aws_security_group.project_sg.id]
